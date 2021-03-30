@@ -1,23 +1,24 @@
 ﻿<Properties StartupConfiguration="{457D1F4D-BBCA-439B-BBD9-5105CFC0E757}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Task1/MyList.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Task1/SortByInserts.cs">
     <Files>
       <File FileName="Task1/Program.cs" Line="11" Column="13" />
       <File FileName="Task1/Properties/EmptyClass.cs" Line="72" Column="10" />
-      <File FileName="Task1/MyList.cs" Line="1" Column="1" />
+      <File FileName="Task1/MyList.cs" Line="109" Column="10" />
+      <File FileName="Task1/SortByInserts.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Task1" expanded="True">
             <Node name="Task1" expanded="True">
-              <Node name="MyList.cs" selected="True" />
+              <Node name="SortByInserts.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Task1 FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Task1 PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|anycpu" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

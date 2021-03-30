@@ -33,6 +33,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Tree.cs" />
     <Compile Include="MyList.cs" />
+    <Compile Include="SortByInserts.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

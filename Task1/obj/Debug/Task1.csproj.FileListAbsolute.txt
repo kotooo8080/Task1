@@ -1,0 +1,6 @@
+/Users/maryoranskaya/Projects/Task1/Task1/bin/Debug/Task1.exe
+/Users/maryoranskaya/Projects/Task1/Task1/bin/Debug/Task1.pdb
+/Users/maryoranskaya/Projects/Task1/Task1/obj/Debug/Task1.csprojAssemblyReference.cache
+/Users/maryoranskaya/Projects/Task1/Task1/obj/Debug/Task1.csproj.CoreCompileInputs.cache
+/Users/maryoranskaya/Projects/Task1/Task1/obj/Debug/Task1.exe
+/Users/maryoranskaya/Projects/Task1/Task1/obj/Debug/Task1.pdb

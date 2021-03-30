@@ -115,50 +115,50 @@
 
         public bool Remove(int Key)
         {
-            TNode<T> treeElem = Search(Key);
-            if (treeElem == null)
+            TNode<T> elem = Search(Key);
+            if (elem == null)
                 return false;
             else
             {
-                TNode<T> parent = treeElem.parent;
-                if (treeElem.left == null && treeElem.right == null)
+                TNode<T> parent = elem.parent;
+                if (elem.left == null && elem.right == null)
                 {
-                    if (parent.left == treeElem) {
+                    if (parent.left == elem) {
                         parent.left = null;
                     }
-                    if (parent.right == treeElem) {
+                    if (parent.right == elem) {
                         parent.right = null;
                     }
                     return true;
                 }
-                else if (treeElem.left == null || treeElem.right == null)
+                else if (elem.left == null || elem.right == null)
                 {
-                    if (treeElem.left == null)
+                    if (elem.left == null)
                     {
-                        if (parent.left == treeElem) {
-                            parent.left = treeElem.right;
+                        if (parent.left == elem) {
+                            parent.left = elem.right;
                         }
                         else {
-                            parent.right = treeElem.right;
+                            parent.right = elem.right;
                         }
-                        treeElem.right.parent = parent;
+                        elem.right.parent = parent;
                     }
                     else
                     {
-                        if (parent.left == treeElem) {
-                            parent.left = treeElem.left;
+                        if (parent.left == elem) {
+                            parent.left = elem.left;
                         }
                         else {
-                            parent.right = treeElem.left;
+                            parent.right = elem.left;
                         }
-                        treeElem.left.parent = parent;
+                        elem.left.parent = parent;
                     }
                     return true;
                 }
                 else
                 {
-                    TNode<T> min = Min(treeElem.right);
-                    treeElem.data = min.data;
+                    TNode<T> min = Min(elem.right);
+                    elem.data = min.data;
                     if (min.parent.right == min) {
                         min.parent.right = min.right;
                     }
