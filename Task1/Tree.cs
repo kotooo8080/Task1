@@ -7,7 +7,6 @@
         public TNode<T> parent = null;
         public TNode<T> left = null;
         public TNode<T> right = null;
-
         public TNode(T Data, int Key) {
             data = Data;
             key = Key;
@@ -16,7 +15,6 @@
     public class Tree<T>
     {
         private TNode<T> root = null;
-
         public TNode<T> Search(int Key)
         {
             TNode<T> current = root;
@@ -36,35 +34,32 @@
 
         public void Add(T Info, int Key)
         {
-            if (root == null)
-            {
+            if (root == null) {
                 root = new TNode<T>(Info, Key);
                 return;
             }
-            else
-            {
+            else {
                 TNode<T> current = root;
-                TNode<T> elem = new TNode<T>(Info, Key);
+                TNode<T> treeElem = new TNode<T>(Info, Key);
                 while (current != null)
                 {
-                    if (current.key == elem.key)
+                    if (current.key == treeElem.key)
                         return;
-                    else if (current.key > elem.key)
+                    else if (current.key > treeElem.key)
                     {
                         if (current.left == null) {
-                            current.left = elem;
-                            elem.parent = current;
+                            current.left = treeElem;
+                            treeElem.parent = current;
                             return;
                         }
                         else {
                             current = current.left;
                         }
                     }
-                    else
-                    {
+                    else {
                         if (current.right == null) {
-                            current.right = elem;
-                            elem.parent = current;
+                            current.right = treeElem;
+                            treeElem.parent = current;
                             return;
                         }
                         else {
@@ -78,8 +73,7 @@
 
         public TNode<T> Min(TNode<T> node)
         {
-            if (node.left == null)
-            {
+            if (node.left == null){
                 return node;
             }
             return Min(node.left);
@@ -87,11 +81,9 @@
 
         public TNode<T> Max(TNode<T> node)
         {
-            if (node.right == null)
-            {
+            if (node.right == null){
                 return node;
             }
-
             return Max(node.right);
         }
 
@@ -119,6 +111,63 @@
                 parent = parent.parent;
             }
             return parent;
+        }
+
+        public bool Remove(int Key)
+        {
+            TNode<T> treeElem = Search(Key);
+            if (treeElem == null)
+                return false;
+            else
+            {
+                TNode<T> parent = treeElem.parent;
+                if (treeElem.left == null && treeElem.right == null)
+                {
+                    if (parent.left == treeElem) {
+                        parent.left = null;
+                    }
+                    if (parent.right == treeElem) {
+                        parent.right = null;
+                    }
+                    return true;
+                }
+                else if (treeElem.left == null || treeElem.right == null)
+                {
+                    if (treeElem.left == null)
+                    {
+                        if (parent.left == treeElem) {
+                            parent.left = treeElem.right;
+                        }
+                        else {
+                            parent.right = treeElem.right;
+                        }
+                        treeElem.right.parent = parent;
+                    }
+                    else
+                    {
+                        if (parent.left == treeElem) {
+                            parent.left = treeElem.left;
+                        }
+                        else {
+                            parent.right = treeElem.left;
+                        }
+                        treeElem.left.parent = parent;
+                    }
+                    return true;
+                }
+                else
+                {
+                    TNode<T> min = Min(treeElem.right);
+                    treeElem.data = min.data;
+                    if (min.parent.right == min) {
+                        min.parent.right = min.right;
+                    }
+                    else {
+                        min.parent.left = min.right;
+                    }
+                    return true;
+                }
+            }
         }
     }
 }
